@@ -189,18 +189,22 @@ section { padding: 100px 24px; }
 .compare-table tr:last-child td { border-bottom: none; }
 .founder-col { background: #1F1140; color: var(--card); border-right: 1px solid var(--gold); }
 .founder-col-head { background: #1F1140; color: var(--card); border-right: 1px solid var(--gold); border-bottom: 1px solid var(--gold); }
+
+.brand-lockup { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brand-mark { width: 48px; height: 48px; object-fit: contain; flex: 0 0 auto; display: block; }
+.brand-text { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.brand-wordmark { width: 96px; height: auto; display: block; }
+.brand-wordmark.footer-wordmark { width: 104px; filter: invert(1) brightness(1.18); opacity: 0.95; }
 </style>
 </head>
 <body>
 
 <header class="fixed top-0 left-0 right-0 z-50" style="background: rgba(244, 238, 251, 0.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line);">
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-[72px]">
-    <a href="#hero" class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--accent), var(--accent-bright));">
-        <span class="font-serif italic-light text-xl text-white">S</span>
-      </div>
-      <div>
-        <div class="font-display text-lg leading-none">Shero</div>
+    <a href="#hero" class="brand-lockup" aria-label="Shero Partner Program">
+      <img src="assets/shero-butterfly.png" alt="" class="brand-mark">
+      <div class="brand-text">
+        <img src="assets/shero-wordmark.png" alt="Shero" class="brand-wordmark">
         <div class="text-[9px] tracking-[0.24em] uppercase mt-1" style="color: var(--muted);">Partner Program</div>
       </div>
     </a>
@@ -973,11 +977,9 @@ section { padding: 100px 24px; }
     <div class="grid md:grid-cols-12 gap-12 mb-12">
       <div class="md:col-span-5">
         <div class="flex items-center gap-3 mb-6">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold); color: var(--gold);">
-            <span class="font-serif italic-light text-lg">S</span>
-          </div>
-          <div>
-            <div class="font-display text-xl">Shero</div>
+          <img src="assets/shero-butterfly.png" alt="" class="brand-mark">
+          <div class="brand-text">
+            <img src="assets/shero-wordmark.png" alt="Shero" class="brand-wordmark footer-wordmark">
             <div class="text-[9px] tracking-[0.24em] uppercase mt-1" style="color: rgba(255,255,255,0.4);">Partner Program · 联创 38</div>
           </div>
         </div>

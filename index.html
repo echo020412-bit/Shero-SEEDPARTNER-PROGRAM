@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shero 组织方入驻计划 — 共建全国性女性活动聚集地</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+:root {
+  --bg: #F4EEFB;
+  --bg-warm: #ECE3F5;
+  --bg-deep: #140A28;
+  --bg-deep-2: #1F1140;
+  --card: #FFFFFF;
+  --fg: #1A0F2E;
+  --muted: #6B5E80;
+  --muted-deep: #4A3D5F;
+  --muted-light: #9D8FB5;
+  --accent: #6D28D9;
+  --accent-deep: #4C1D95;
+  --accent-light: #8B5CF6;
+  --accent-bright: #A855F7;
+  --gold: #C9A961;
+  --gold-deep: #8B6D3F;
+  --gold-light: #E0C68A;
+  --pink: #D946EF;
+  --line: rgba(26, 15, 46, 0.10);
+  --line-strong: rgba(26, 15, 46, 0.18);
+}
+
+* { -webkit-font-smoothing: antialiased; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+.font-serif { font-family: 'Fraunces', 'Noto Serif SC', serif; font-optical-sizing: auto; }
+.font-display { font-family: 'Fraunces', 'Noto Serif SC', serif; font-weight: 500; letter-spacing: -0.02em; }
+.font-display-tight { font-family: 'Fraunces', 'Noto Serif SC', serif; font-weight: 600; letter-spacing: -0.03em; }
+.italic-thin { font-family: 'Fraunces', serif; font-style: italic; font-weight: 200; }
+.italic-light { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; }
+.italic-regular { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
+.mono-label { font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; font-size: 10px; }
+.tiny-num { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic; font-size: 12px; letter-spacing: 0.05em; }
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(109, 40, 217, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(217, 70, 239, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+main, header, footer { position: relative; z-index: 2; }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.25s; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.35s; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.45s; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.55s; }
+
+section { padding: 100px 24px; }
+@media (min-width: 1024px) { section { padding: 140px 40px; } }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 60px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line-strong);
+}
+.section-num { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic; color: var(--gold-deep); font-size: 14px; letter-spacing: 0.04em; white-space: nowrap; }
+.section-line { flex: 1; height: 1px; background: var(--line-strong); position: relative; }
+.section-line::before { content: ''; position: absolute; left: 0; top: -3px; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+.section-meta { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 500; white-space: nowrap; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 14px; margin-bottom: 24px;
+  font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+.text-dark .eyebrow { color: var(--gold); }
+
+.btn-primary {
+  background: var(--fg); color: var(--bg); padding: 16px 32px; border-radius: 2px;
+  font-weight: 500; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; border: 1px solid var(--fg); cursor: pointer;
+}
+.btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+
+.btn-gold {
+  background: var(--gold); color: var(--bg-deep); padding: 16px 32px; border-radius: 2px;
+  font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; border: 1px solid var(--gold); cursor: pointer;
+}
+.btn-gold:hover { background: var(--gold-deep); color: var(--bg); border-color: var(--gold-deep); }
+
+.nav-link { position: relative; padding: 4px 0; color: var(--muted-deep); font-size: 13px; font-weight: 500; transition: color 0.3s; }
+.nav-link::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: var(--gold-deep); transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.nav-link:hover { color: var(--fg); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-link.active { color: var(--fg); }
+
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { display: flex; animation: marquee 40s linear infinite; width: fit-content; gap: 48px; align-items: center; }
+
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.float-anim { animation: float 6s ease-in-out infinite; }
+
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 40s linear infinite; }
+
+.spots-bar { height: 2px; background: rgba(255,255,255,0.1); position: relative; overflow: hidden; }
+.spots-fill { height: 100%; background: var(--gold); transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
+
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 2px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden;
+}
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card:hover::before { transform: scaleX(1); }
+.card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 20px 40px -25px rgba(26, 15, 46, 0.15); }
+
+.dark-section { background: var(--bg-deep); color: var(--card); position: relative; overflow: hidden; }
+.dark-section::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(184, 147, 90, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(217, 70, 239, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0; }
+
+.share-tooltip {
+  position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+  background: var(--fg); color: var(--bg); padding: 12px 24px; border-radius: 4px;
+  font-size: 13px; letter-spacing: 0.05em; z-index: 9999; opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.share-tooltip.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+.mobile-menu {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 99;
+  transform: translateY(-100%); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex; flex-direction: column; justify-content: center; padding: 40px;
+}
+.mobile-menu.open { transform: translateY(0); }
+
+/* Custom Table Styles */
+.compare-table { width: 100%; border-collapse: collapse; }
+.compare-table th, .compare-table td { padding: 20px 24px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.compare-table th { font-weight: 500; color: var(--muted); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; }
+.compare-table tr:last-child td { border-bottom: none; }
+.founder-col { background: #1F1140; color: var(--card); border-right: 1px solid var(--gold); }
+.founder-col-head { background: #1F1140; color: var(--card); border-right: 1px solid var(--gold); border-bottom: 1px solid var(--gold); }
+</style>
+</head>
+<body>
+
+<header class="fixed top-0 left-0 right-0 z-50" style="background: rgba(244, 238, 251, 0.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line);">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-[72px]">
+    <a href="#hero" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--accent), var(--accent-bright));">
+        <span class="font-serif italic-light text-xl text-white">S</span>
+      </div>
+      <div>
+        <div class="font-display text-lg leading-none">Shero</div>
+        <div class="text-[9px] tracking-[0.24em] uppercase mt-1" style="color: var(--muted);">Partner Program</div>
+      </div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-10">
+      <a href="#letter" class="nav-link">缘起</a>
+      <a href="#about" class="nav-link">关于平台</a>
+      <a href="#why" class="nav-link">核心优势</a>
+      <a href="#cooperation" class="nav-link">合作模式</a>
+      <a href="#benefits" class="nav-link">入驻权益</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button onclick="sharePage()" class="hidden md:flex items-center gap-2 text-xs font-medium px-4 py-2.5 transition-all" style="border: 1px solid var(--line-strong); color: var(--fg); border-radius: 2px;">
+        <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+        分享
+      </button>
+      <a href="#apply" class="hidden md:inline-flex items-center gap-2 text-xs font-medium px-5 py-2.5 transition-all" style="background: var(--fg); color: var(--bg); letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px;">
+        立即申请
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      </a>
+      <button id="menuBtn" class="lg:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button id="closeMenu" class="absolute top-6 right-6 p-2"><i data-lucide="x" class="w-6 h-6"></i></button>
+  <nav class="flex flex-col gap-8">
+    <a href="#letter" class="font-display text-3xl">缘起</a>
+    <a href="#about" class="font-display text-3xl">关于平台</a>
+    <a href="#why" class="font-display text-3xl">核心优势</a>
+    <a href="#cooperation" class="font-display text-3xl">合作模式</a>
+    <a href="#benefits" class="font-display text-3xl">入驻权益</a>
+    <a href="#apply" class="mt-4 inline-flex items-center gap-2 font-medium px-6 py-4 w-fit" style="background: var(--fg); color: var(--bg); letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px;">立即申请 <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+  </nav>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="pt-[120px] lg:pt-[140px]">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div class="lg:col-span-7 relative z-10">
+        <div class="reveal">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[10px] tracking-[0.2em] uppercase font-medium" style="border: 1px solid var(--line-strong); color: var(--gold-deep); background: rgba(255,255,255,0.5);">
+            <span class="w-1.5 h-1.5 rounded-full" style="background: var(--gold);"></span>
+            Shero Partner Program · 联创 38
+          </span>
+        </div>
+        <h1 class="reveal mt-10 font-display-tight leading-[0.95]" style="font-size: clamp(44px, 7vw, 88px);">
+          让女性力量，<br>
+          <span class="italic-thin" style="color: var(--gold-deep);">在更安全的场域</span><br>
+          自由生长。
+        </h1>
+        <p class="reveal mt-10 text-lg max-w-xl leading-relaxed" style="color: var(--muted-deep);">
+          告别公域内卷与恶意限流。Shero 邀请前 38 位活动组织方共建国内首个女性活动聚集地。
+        </p>
+        <div class="reveal mt-12 flex flex-wrap gap-4">
+          <a href="#apply" class="btn-primary">
+            <span>申请创始名额</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#letter" class="inline-flex items-center gap-3 px-8 py-4 text-xs font-medium uppercase tracking-wider transition-all" style="border: 1px solid var(--line-strong); color: var(--fg); border-radius: 2px;" onclick="toggleShare()">
+            <i data-lucide="share-2" class="w-4 h-4"></i>
+            <span>分享此页</span>
+          </a>
+        </div>
+        <div class="reveal mt-16 grid grid-cols-3 gap-8 pt-10" style="border-top: 1px solid var(--line-strong);">
+          <div><div class="font-serif font-light text-4xl lg:text-5xl">600<span class="text-base align-top opacity-50">+</span></div><div class="mono-label mt-2" style="color: var(--muted);">种子用户</div></div>
+          <div><div class="font-serif font-light text-4xl lg:text-5xl">40<span class="text-base align-top opacity-50">%</span></div><div class="mono-label mt-2" style="color: var(--muted);">日活跃率</div></div>
+          <div><div class="font-serif font-light text-4xl lg:text-5xl" style="color: var(--gold-deep);">38</div><div class="mono-label mt-2" style="color: var(--muted);">创始名额</div></div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative flex items-center justify-center min-h-[400px] lg:min-h-[600px]">
+        <div class="reveal relative">
+          <div class="font-serif font-light leading-none float-anim" style="font-size: clamp(200px, 30vw, 380px); color: var(--fg); letter-spacing: -0.06em;">38</div>
+          <div class="absolute top-0 -right-4 lg:-right-12 w-24 h-24 lg:w-32 lg:h-32 spin-slow">
+            <svg viewBox="0 0 200 200" class="w-full h-full">
+              <defs><path id="circlePath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"/></defs>
+              <text fill="var(--gold-deep)" font-family="Fraunces" font-style="italic" font-size="13" letter-spacing="4">
+                <textPath href="#circlePath">SEED PARTNER · FOUNDING · LIMITED · </textPath>
+              </text>
+            </svg>
+          </div>
+          <div class="absolute bottom-4 -left-4 lg:-left-12 px-4 py-2 transform -rotate-6" style="border: 1px solid var(--gold-deep); color: var(--gold-deep); background: rgba(255,255,255,0.85); backdrop-filter: blur(8px);">
+            <div class="text-[9px] tracking-[0.24em] uppercase">Limited Edition</div>
+            <div class="font-display italic-light text-base mt-0.5">2026 · Spring</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-24 py-6 overflow-hidden" style="border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong);">
+      <div class="marquee-track">
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">身心疗愈</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">自我成长</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">艺术与生活</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">社交与链接</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">正念冥想</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">姐妹夜话</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+        <!-- duplicate -->
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">身心疗愈</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">自我成长</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">艺术与生活</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">社交与链接</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">正念冥想</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">姐妹夜话</span>
+        <span class="text-lg" style="color: var(--gold);">✦</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LETTER ============ -->
+<section id="letter">
+  <div class="max-w-[1100px] mx-auto">
+    <div class="reveal section-header">
+      <span class="section-num">01 / 缘起</span>
+      <div class="section-line"></div>
+      <span class="section-meta">From the Founder</span>
+    </div>
+
+    <div class="reveal grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div class="lg:col-span-5">
+        <div class="eyebrow">A Letter to Our Partners</div>
+        <h2 class="font-display-tight text-4xl lg:text-5xl leading-[1.05]">
+          给组织方的<br>
+          <span class="italic-thin" style="color: var(--gold-deep);">一封信</span>
+        </h2>
+        <div class="mt-12 pt-8" style="border-top: 1px solid var(--line-strong);">
+          <div class="font-serif italic-light text-2xl">Shero 发起人 Echo</div>
+          <div class="text-sm mt-2 italic-regular" style="color: var(--muted); font-family: 'Fraunces', serif;">2026 年春</div>
+        </div>
+      </div>
+      <div class="lg:col-span-7 p-8 lg:p-10" style="background: var(--card); border: 1px solid var(--line); box-shadow: 0 20px 50px -30px rgba(109, 40, 217, 0.2);">
+        <div class="space-y-5 font-serif font-light text-[16px] lg:text-[17px] leading-[1.8]" style="color: var(--fg-soft);">
+          <p class="italic-light">你好，我是 Shero 的发起人。</p>
+          <p>在做女性成长项目的过程中，我经历了、也看到了太多女性议题在公域平台遇到了无形的墙。限流、恶意、偏见...这些让许多优秀的女性活动胎死腹中，或难以为续。</p>
+          <p>所以我决定做 Shero——不仅是一个工具，更是一个专注女性议题的安全聚集地。这里没有直接的性社交，只有关于成长与共鸣的纯粹连接。</p>
+          <p>平台刚刚起步，我们寻找的不是"商家"，而是"共建者"。前38位入驻的组织方，将与我们一同定义这个生态的规则，并永久享受创始权益。</p>
+          <p>如果你也相信，女性的力量需要一个安全、专注、无偏见的场域来生长，欢迎加入我们。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" style="background: var(--bg-warm);">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="reveal section-header">
+      <span class="section-num">02 / 关于 Shero</span>
+      <div class="section-line"></div>
+      <span class="section-meta">Continuous Product System</span>
+    </div>
+
+    <div class="reveal grid lg:grid-cols-12 gap-12 mb-20">
+      <div class="lg:col-span-5">
+        <div class="eyebrow">A System, Not a Page</div>
+        <h2 class="font-display-tight text-4xl lg:text-5xl leading-[1.05]">
+          连续产品系统，<br>
+          <span class="italic-thin" style="color: var(--gold-deep);">而非单点聊天页</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-6 lg:col-start-7 flex items-end">
+        <p class="text-base lg:text-lg leading-relaxed" style="color: var(--muted-deep);">
+          Shero围绕「看见、理解、动起来、进同频关系」构建连续产品系统。通过聊天、发现、日常、我的四个入口，形成完整的用户成长闭环。
+        </p>
+      </div>
+    </div>
+
+    <div class="reveal mb-16">
+      <div class="flex items-baseline justify-between mb-10">
+        <div class="mono-label" style="color: var(--muted);">— 一条完整用户旅程</div>
+        <div class="italic-light text-sm" style="color: var(--muted);">Six Stages</div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 relative">
+        <div class="hidden lg:block absolute top-6 left-[8%] right-[8%] h-px" style="background: var(--line-strong);"></div>
+        
+        <div class="text-center relative z-10">
+          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4" style="border: 1px solid var(--gold-deep); color: var(--gold-deep); background: var(--bg-warm);">
+            <i data-lucide="log-in" class="w-5 h-5"></i>
+          </div>
+          <div class="tiny-num" style="color: var(--gold-deep);">01</div>
+          <div class="font-display text-sm mt-1">看见</div>
+          <div class="text-[11px] mt-1" style="color: var(--muted);">建立自我坐标</div>
+        </div>
+        <div class="text-center relative z-10">
+          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4" style="border: 1px solid var(--gold-deep); color: var(--gold-deep); background: var(--bg-warm);">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </div>
+          <div class="tiny-num" style="color: var(--gold-deep);">02</div>
+          <div class="font-display text-sm mt-1">理解</div>
+          <div class="text-[11px] mt-1" style="color: var(--muted);">AI深度对话</div>
+        </div>
+        <div class="text-center relative z-10">
+          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4" style="border: 1px solid var(--gold-deep); color: var(--gold-deep); background: var(--bg-warm);">
+            <i data-lucide="edit-3" class="w-5 h-5"></i>
+          </div>
+          <div class="tiny-num" style="color: var(--gold-deep);">03</div>
+          <div class="font-display text-sm mt-1">动起来</div>
+          <div class="text-[11px] mt-1" style="color: var(--muted);">行动方案生成</div>
+        </div>
+        <div class="text-center relative z-10">
+          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4" style="border: 1px solid var(--gold-deep); color: var(--gold-deep); background: var(--bg-warm);">
+            <i data-lucide="lightbulb" class="w-5 h-5"></i>
+          </div>
+          <div class="tiny-num" style="color: var(--gold-deep);">04</div>
+          <div class="font-display text-sm mt-1">沉淀</div>
+          <div class="text-[11px] mt-1" style="color: var(--muted);">记忆库留存</div>
+        </div>
+        <div class="text-center relative z-10">
+          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4" style="border: 1px solid var(--gold-deep); color: var(--gold-deep); background: var(--bg-warm);">
+            <i data-lucide="move-right" class="w-5 h-5"></i>
+          </div>
+          <div class="tiny-num" style="color: var(--gold-deep);">05</div>
+          <div class="font-display text-sm mt-1">连接</div>
+          <div class="text-[11px] mt-1" style="color: var(--muted);">进入同频场域</div>
+        </div>
+        <div class="text-center relative z-10">
+          <div class="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4" style="border: 1px solid var(--gold-deep); color: var(--gold-deep); background: var(--bg-warm);">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <div class="tiny-num" style="color: var(--gold-deep);">06</div>
+          <div class="font-display text-sm mt-1">关系</div>
+          <div class="text-[11px] mt-1" style="color: var(--muted);">成长线索回看</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="card p-6">
+        <i data-lucide="bot" class="w-6 h-6 mb-4" style="color: var(--gold-deep);"></i>
+        <div class="font-display text-base mb-1">AI 陪伴</div>
+        <div class="text-xs" style="color: var(--muted);">方案生成</div>
+      </div>
+      <div class="card p-6">
+        <i data-lucide="brain" class="w-6 h-6 mb-4" style="color: var(--gold-deep);"></i>
+        <div class="font-display text-base mb-1">人格图谱</div>
+        <div class="text-xs" style="color: var(--muted);">成长地图</div>
+      </div>
+      <div class="card p-6">
+        <i data-lucide="database" class="w-6 h-6 mb-4" style="color: var(--gold-deep);"></i>
+        <div class="font-display text-base mb-1">记忆库</div>
+        <div class="text-xs" style="color: var(--muted);">情绪速记</div>
+      </div>
+      <div class="card p-6">
+        <i data-lucide="bar-chart-3" class="w-6 h-6 mb-4" style="color: var(--gold-deep);"></i>
+        <div class="font-display text-base mb-1">数据洞察</div>
+        <div class="text-xs" style="color: var(--muted);">日/周/月报</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY SHERO ============ -->
+<section id="why" class="dark-section text-dark">
+  <div class="orb" style="top: 10%; left: 5%; width: 400px; height: 400px; background: var(--accent); opacity: 0.4;"></div>
+  <div class="orb" style="bottom: 10%; right: 5%; width: 300px; height: 300px; background: var(--pink); opacity: 0.2;"></div>
+
+  <div class="max-w-[1400px] mx-auto relative z-10">
+    <div class="reveal section-header" style="border-color: rgba(255,255,255,0.1);">
+      <span class="section-num" style="color: var(--gold);">03 / 为什么选择 Shero</span>
+      <div class="section-line" style="background: rgba(255,255,255,0.1);"></div>
+      <span class="section-meta" style="color: rgba(255,255,255,0.5);">Three Core Advantages</span>
+    </div>
+
+    <div class="reveal mb-20 max-w-3xl">
+      <div class="eyebrow">Why Shero</div>
+      <h2 class="font-display-tight text-4xl lg:text-5xl leading-[1.05] text-white">
+        三大核心优势，<span class="italic-thin" style="color: var(--gold);">为女性活动组织方提供独特价值。</span>
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-5 reveal">
+        <div class="card p-8 lg:p-10 h-full flex flex-col" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="flex items-start justify-between mb-8">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold); color: var(--gold);">
+              <i data-lucide="zap" class="w-6 h-6"></i>
+            </div>
+            <span class="font-serif italic-thin text-6xl leading-none" style="color: var(--gold); opacity: 0.6;">01</span>
+          </div>
+          <div class="eyebrow mb-3">高转化率</div>
+          <h3 class="font-display-tight text-2xl mb-4 text-white">AI驱动的精准匹配</h3>
+          <p class="text-sm leading-relaxed mb-8" style="color: rgba(255,255,255,0.6);">
+            基于用户对话、测试和行为数据，构建深度画像，将活动推给"正好需要"的人。
+          </p>
+          <div class="space-y-2 mt-auto pt-6" style="border-top: 1px solid rgba(255,255,255,0.1);">
+            <div class="flex items-center gap-2 text-xs text-white"><span style="color: var(--gold);">✦</span> 数据闭环：输入→理解→生成→校准</div>
+            <div class="flex items-center gap-2 text-xs text-white"><span style="color: var(--gold);">✦</span> 记忆库沉淀，持续优化匹配</div>
+            <div class="flex items-center gap-2 text-xs text-white"><span style="color: var(--gold);">✦</span> 方案卡植入，转化意愿极强</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 reveal">
+        <div class="card p-8 lg:p-10 h-full flex flex-col" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="flex items-start justify-between mb-8">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold); color: var(--gold);">
+              <i data-lucide="shield" class="w-6 h-6"></i>
+            </div>
+            <span class="font-serif italic-thin text-6xl leading-none" style="color: var(--gold); opacity: 0.6;">02</span>
+          </div>
+          <div class="eyebrow mb-3">40% DAU</div>
+          <h3 class="font-display-tight text-2xl mb-4 text-white">专注女性议题的安全场域</h3>
+          <p class="text-sm leading-relaxed mb-8" style="color: rgba(255,255,255,0.6);">
+            平台定位清晰，无直接性社交干扰。社区氛围聚焦成长与共鸣，天然过滤低质流量。
+          </p>
+          <div class="space-y-2 mt-auto pt-6" style="border-top: 1px solid rgba(255,255,255,0.1);">
+            <div class="flex items-center gap-2 text-xs text-white"><span style="color: var(--gold);">✦</span> 告别公域限流与恶意攻击</div>
+            <div class="flex items-center gap-2 text-xs text-white"><span style="color: var(--gold);">✦</span> 纯粹的女性成长同温层</div>
+            <div class="flex items-center gap-2 text-xs text-white"><span style="color: var(--gold);">✦</span> 组织方精力聚焦内容创作</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 reveal">
+        <div class="card p-8 lg:p-10 h-full flex flex-col" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="flex items-start justify-between mb-8">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold); color: var(--gold);">
+              <i data-lucide="git-merge" class="w-6 h-6"></i>
+            </div>
+            <span class="font-serif italic-thin text-6xl leading-none" style="color: var(--gold); opacity: 0.6;">03</span>
+          </div>
+          <div class="eyebrow mb-3">600+ 用户</div>
+          <h3 class="font-display-tight text-2xl mb-4 text-white">完整的流量生态闭环</h3>
+          <p class="text-sm leading-relaxed mb-8" style="color: rgba(255,255,255,0.6);">
+            从活动发现到成长沉淀，让每次活动都成为用户成长线索。
+          </p>
+          <div class="mt-auto pt-6" style="border-top: 1px solid rgba(255,255,255,0.1);">
+            <div class="font-serif italic-light text-lg" style="color: var(--gold);">发现 → 报名 → 沉淀</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FUNNEL ============ -->
+<section id="funnel">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="reveal section-header">
+      <span class="section-num">04 / 流量漏斗</span>
+      <div class="section-line"></div>
+      <span class="section-meta">Conversion Path</span>
+    </div>
+
+    <div class="reveal grid lg:grid-cols-12 gap-12 mb-16">
+      <div class="lg:col-span-6">
+        <div class="eyebrow">High Conversion</div>
+        <h2 class="font-display-tight text-4xl lg:text-5xl leading-[1.05]">
+          高转化的<br>
+          <span class="italic-thin" style="color: var(--gold-deep);">实现路径</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:col-start-8 flex items-end">
+        <p class="text-base lg:text-lg leading-relaxed" style="color: var(--muted-deep);">
+          基于"共鸣广场"与"成长地图"的闭环设计，从曝光、转化到留存，每一阶段都为高成交率而生。
+        </p>
+      </div>
+    </div>
+
+    <div class="reveal grid md:grid-cols-3 gap-6">
+      <div class="card p-8 flex flex-col">
+        <div class="flex items-start justify-between mb-6">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold-deep); color: var(--gold-deep);">
+            <i data-lucide="eye" class="w-6 h-6"></i>
+          </div>
+          <span class="font-serif italic-thin text-5xl leading-none" style="color: var(--gold); opacity: 0.4;">01</span>
+        </div>
+        <div class="eyebrow mb-3">曝光阶段</div>
+        <h3 class="font-display-tight text-2xl mb-4">共鸣广场</h3>
+        <p class="text-sm leading-relaxed mb-6" style="color: var(--muted-deep);">
+          活动不仅展示在列表，更根据用户当前情绪状态和成长目标进行推荐。千人千面，精准触达。
+        </p>
+        <div class="mt-auto pt-4 flex items-center gap-2 text-xs font-medium" style="border-top: 1px solid var(--line); color: var(--gold-deep);">
+          <span>✦</span> 千人千面 · 精准触达
+        </div>
+      </div>
+
+      <div class="card p-8 flex flex-col" style="background: var(--bg-deep); color: var(--card); border-color: var(--bg-deep);">
+        <div class="flex items-start justify-between mb-6">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold); color: var(--gold);">
+            <i data-lucide="mouse-pointer-click" class="w-6 h-6"></i>
+          </div>
+          <span class="font-serif italic-thin text-5xl leading-none" style="color: var(--gold); opacity: 0.8;">02</span>
+        </div>
+        <div class="eyebrow mb-3" style="color: var(--gold);">核心转化点</div>
+        <h3 class="font-display-tight text-2xl mb-4 text-white">方案卡植入</h3>
+        <p class="text-sm leading-relaxed mb-6" style="color: rgba(255,255,255,0.6);">
+          在AI对话生成的"行动方案"中，直接植入相关活动作为解决方案。转化意愿极强。
+        </p>
+        <div class="mt-auto pt-4 flex items-center gap-2 text-xs font-medium" style="border-top: 1px solid rgba(255,255,255,0.1); color: var(--gold);">
+          <span>✦</span> 高意愿 · 高成交率
+        </div>
+      </div>
+
+      <div class="card p-8 flex flex-col">
+        <div class="flex items-start justify-between mb-6">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold-deep); color: var(--gold-deep);">
+            <i data-lucide="heart" class="w-6 h-6"></i>
+          </div>
+          <span class="font-serif italic-thin text-5xl leading-none" style="color: var(--gold); opacity: 0.4;">03</span>
+        </div>
+        <div class="eyebrow mb-3">留存阶段</div>
+        <h3 class="font-display-tight text-2xl mb-4">成长记忆</h3>
+        <p class="text-sm leading-relaxed mb-6" style="color: var(--muted-deep);">
+          活动结束后，体验自动沉淀为"成长线索"，用户可回看，形成长期品牌印象。长期资产，长期关系。
+        </p>
+        <div class="mt-auto pt-4 flex items-center gap-2 text-xs font-medium" style="border-top: 1px solid var(--line); color: var(--gold-deep);">
+          <span>✦</span> 长期资产 · 长期关系
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIVITIES ============ -->
+<section id="activities" style="background: var(--bg-warm);">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="reveal section-header">
+      <span class="section-num">05 / 适合做什么活动</span>
+      <div class="section-line"></div>
+      <span class="section-meta">High-Conversion Directions</span>
+    </div>
+
+    <div class="reveal mb-16 max-w-3xl">
+      <div class="eyebrow">User Profile Based</div>
+      <h2 class="font-display-tight text-4xl lg:text-5xl leading-[1.05]">
+        基于用户画像，<span class="italic-thin" style="color: var(--gold-deep);">推荐四个高转化方向。</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 reveal-stagger">
+      <div class="card p-8 flex flex-col">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold-deep); color: var(--gold-deep);">
+            <i data-lucide="flower-2" class="w-6 h-6"></i>
+          </div>
+          <span class="font-serif italic-thin text-5xl" style="color: var(--gold); opacity: 0.4;">01</span>
+        </div>
+        <h3 class="font-display-tight text-xl mb-3">身心疗愈</h3>
+        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">针对焦虑、内耗的年轻女性，提供放松与能量恢复。</p>
+        <div class="flex flex-wrap gap-1.5 pt-4" style="border-top: 1px solid var(--line);">
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">正念冥想</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">颂钵疗愈</span>
+        </div>
+      </div>
+
+      <div class="card p-8 flex flex-col">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold-deep); color: var(--gold-deep);">
+            <i data-lucide="trending-up" class="w-6 h-6"></i>
+          </div>
+          <span class="font-serif italic-thin text-5xl" style="color: var(--gold); opacity: 0.4;">02</span>
+        </div>
+        <h3 class="font-display-tight text-xl mb-3">自我成长</h3>
+        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">聚焦职业发展与认知升级，满足用户的提升欲。</p>
+        <div class="flex flex-wrap gap-1.5 pt-4" style="border-top: 1px solid var(--line);">
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">职场解惑</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">读书会</span>
+        </div>
+      </div>
+
+      <div class="card p-8 flex flex-col">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold-deep); color: var(--gold-deep);">
+            <i data-lucide="palette" class="w-6 h-6"></i>
+          </div>
+          <span class="font-serif italic-thin text-5xl" style="color: var(--gold); opacity: 0.4;">03</span>
+        </div>
+        <h3 class="font-display-tight text-xl mb-3">艺术与生活</h3>
+        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">通过艺术创作释放压力，培养生活美学。</p>
+        <div class="flex flex-wrap gap-1.5 pt-4" style="border-top: 1px solid var(--line);">
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">手作工坊</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">花艺茶道</span>
+        </div>
+      </div>
+
+      <div class="card p-8 flex flex-col">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold-deep); color: var(--gold-deep);">
+            <i data-lucide="users-round" class="w-6 h-6"></i>
+          </div>
+          <span class="font-serif italic-thin text-5xl" style="color: var(--gold); opacity: 0.4;">04</span>
+        </div>
+        <h3 class="font-display-tight text-xl mb-3">社交与链接</h3>
+        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">解决孤独感，建立高质量的女性互助同温层。</p>
+        <div class="flex flex-wrap gap-1.5 pt-4" style="border-top: 1px solid var(--line);">
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">姐妹夜话</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">周末徒步</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COOPERATION ============ -->
+<section id="cooperation">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="reveal section-header">
+      <span class="section-num">06 / 合作模式建议</span>
+      <div class="section-line"></div>
+      <span class="section-meta">Three Tiers</span>
+    </div>
+
+    <div class="reveal mb-16 max-w-3xl">
+      <div class="eyebrow">From Light to Deep</div>
+      <h2 class="font-display-tight text-4xl lg:text-5xl leading-[1.05]">
+        满足从轻量曝光<br>到 <span class="italic-thin" style="color: var(--gold-deep);">深度转化的不同需求</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 reveal">
+      <div class="card p-8 flex flex-col">
+        <span class="font-serif italic-thin text-5xl mb-6" style="color: var(--gold); opacity: 0.5;">01</span>
+        <div class="eyebrow mb-3">Activity Co-creation</div>
+        <h3 class="font-display-tight text-2xl mb-4">活动共创与推广</h3>
+        <p class="text-sm mb-8" style="color: var(--muted-deep);">商家入驻"发现"页，发布线上/线下活动。平台基于AI画像进行精准流量分发。</p>
+        <div class="space-y-3 mt-auto">
+          <div class="flex items-start gap-3 text-xs"><span style="color: var(--gold-deep);">✦</span> 入驻"发现"页，发布活动</div>
+          <div class="flex items-start gap-3 text-xs"><span style="color: var(--gold-deep);">✦</span> AI画像精准流量分发</div>
+          <div class="flex items-start gap-3 text-xs"><span style="color: var(--gold-deep);">✦</span> 报名/订单/客服全链路</div>
+          <div class="flex items-start gap-3 text-xs"><span style="color: var(--gold-deep);">✦</span> 数据进入"成长地图"</div>
+        </div>
+      </div>
+
+      <div class="card p-8 flex flex-col" style="background: var(--bg-deep); color: var(--card); border-color: var(--gold);">
+        <div class="flex justify-between items-start mb-6">
+          <span class="font-serif italic-thin text-5xl" style="color: var(--gold); opacity: 0.8;">02</span>
+          <span class="text-[10px] px-3 py-1 rounded-full font-semibold" style="background: var(--gold); color: var(--bg-deep); letter-spacing: 0.1em;">推荐</span>
+        </div>
+        <div class="eyebrow mb-3" style="color: var(--gold);">Content & Brand</div>
+        <h3 class="font-display-tight text-2xl mb-4 text-white">内容与品牌植入</h3>
+        <p class="text-sm mb-8" style="color: rgba(255,255,255,0.6);">通过"每日一签"联名、"人物特辑"深度合作、方案卡植入，建立高情感连接。</p>
+        <div class="space-y-3 mt-auto">
+          <div class="flex items-start gap-3 text-xs text-white"><span style="color: var(--gold);">✦</span> "每日一签"品牌联名定制</div>
+          <div class="flex items-start gap-3 text-xs text-white"><span style="color: var(--gold);">✦</span> "人物特辑"深度内容合作</div>
+          <div class="flex items-start gap-3 text-xs text-white"><span style="color: var(--gold);">✦</span> 方案卡中植入品牌服务</div>
+          <div class="flex items-start gap-3 text-xs text-white"><span style="color: var(--gold);">✦</span> 高情感连接，建立好感度</div>
+        </div>
+      </div>
+
+      <div class="card p-8 flex flex-col">
+        <div class="flex justify-between items-start mb-6">
+          <span class="font-serif italic-thin text-5xl" style="color: var(--gold); opacity: 0.5;">03</span>
+          <span class="text-[9px] px-2 py-1 rounded font-medium tracking-widest" style="background: var(--line); color: var(--muted);">开发中</span>
+        </div>
+        <div class="eyebrow mb-3">Deep Integration</div>
+        <h3 class="font-display-tight text-2xl mb-4">深度服务整合</h3>
+        <p class="text-sm mb-8" style="color: var(--muted-deep);">商家服务接入Shero"行动"模块，用户在对话中直接预约服务（如咨询）。</p>
+        <div class="space-y-3 mt-auto">
+          <div class="flex items-start gap-3 text-xs"><span style="color: var(--gold-deep);">✦</span> 服务接入"行动"模块</div>
+          <div class="flex items-start gap-3 text-xs"><span style="color: var(--gold-deep);">✦</span> 对话中直接预约服务</div>
+          <div class="flex items-start gap-3 text-xs"><span style="color: var(--gold-deep);">✦</span> 长期会员制合作</div>
+          <div class="flex items-start gap-3 text-xs"><span style="color: var(--gold-deep);">✦</span> 最高级别转化与资产沉淀</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS ============ -->
+<section id="benefits" style="background: var(--bg-warm);">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="reveal section-header">
+      <span class="section-num">07 / 入驻权益详情</span>
+      <div class="section-line"></div>
+      <span class="section-meta">Benefits</span>
+    </div>
+
+    <div class="reveal mb-12 max-w-3xl">
+      <div class="eyebrow">Founding Partner Privileges</div>
+      <h2 class="font-display-tight text-4xl lg:text-5xl leading-[1.05]">
+        前38位入驻组织方，<span class="italic-thin" style="color: var(--gold-deep);">享永久创始权益。</span>
+      </h2>
+    </div>
+
+    <div class="reveal overflow-x-auto rounded-sm border" style="border-color: var(--line); background: var(--card);">
+      <table class="compare-table min-w-[800px]">
+        <thead>
+          <tr>
+            <th>权益对比</th>
+            <th class="founder-col-head">
+              <div class="flex items-center gap-2">
+                <span style="color: var(--gold);">★</span>
+                <span class="font-display text-base normal-case tracking-normal text-white">创始组织方</span>
+              </div>
+              <div class="text-[10px] mt-1 normal-case tracking-widest" style="color: rgba(255,255,255,0.6);">前 38位 · 永久</div>
+            </th>
+            <th>标准组织方</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="flex items-center gap-3"><i data-lucide="badge-check" class="w-4 h-4" style="color: var(--muted);"></i><span class="text-sm font-medium">入驻认证费用</span></div></td>
+            <td class="founder-col"><span class="font-display-thin text-2xl" style="color: var(--gold);">¥0</span> <span class="text-xs opacity-60 ml-2">永久免费</span></td>
+            <td><span class="font-display-thin text-xl" style="color: var(--muted);">¥168</span> <span class="text-xs" style="color: var(--muted);">/年</span></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><i data-lucide="percent" class="w-4 h-4" style="color: var(--muted);"></i><span class="text-sm font-medium">交易佣金</span></div></td>
+            <td class="founder-col">
+              <span class="font-display-thin text-2xl" style="color: var(--gold);">5%</span> <span class="text-xs opacity-60 ml-2">永久享受</span>
+              <div class="text-[10px] mt-1 italic-regular" style="color: rgba(255,255,255,0.5);">(2026年6月至10月1%佣金，10月起5%)</div>
+            </td>
+            <td><span class="font-display-thin text-xl" style="color: var(--muted);">8%</span></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><i data-lucide="eye" class="w-4 h-4" style="color: var(--muted);"></i><span class="text-sm font-medium">推荐位曝光</span></div></td>
+            <td class="founder-col"><span style="color: var(--gold);">✦</span> <span class="text-sm">优先+额外</span> <span class="text-xs opacity-60 ml-1">(免费：子页面介绍)</span></td>
+            <td><span class="text-sm" style="color: var(--muted);">普通排队</span> <span class="text-xs" style="color: var(--muted);">(额外收费)</span></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><i data-lucide="bar-chart-3" class="w-4 h-4" style="color: var(--muted);"></i><span class="text-sm font-medium">数据分析</span></div></td>
+            <td class="founder-col"><span style="color: var(--gold);">✦</span> <span class="text-sm">高级版免费</span></td>
+            <td><span class="text-sm" style="color: var(--muted);">基础版</span> <span class="text-xs" style="color: var(--muted);">(高级版订阅年费200元+)</span></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><i data-lucide="sparkles" class="w-4 h-4" style="color: var(--muted);"></i><span class="text-sm font-medium">品牌联名</span></div></td>
+            <td class="founder-col"><span style="color: var(--gold);">✦</span> <span class="text-sm">优先参与</span></td>
+            <td><span class="text-sm" style="color: var(--muted-light);">✕ 无</span> <span class="text-xs" style="color: var(--muted);">(额外收费)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEED PROGRAM ============ -->
+<section id="seed" class="dark-section text-dark">
+  <div class="orb" style="top: 10%; right: 5%; width: 500px; height: 500px; background: var(--accent); opacity: 0.5;"></div>
+  <div class="orb" style="bottom: -10%; left: 0%; width: 400px; height: 400px; background: var(--pink); opacity: 0.2;"></div>
+
+  <div class="max-w-[1400px] mx-auto relative z-10">
+    <div class="reveal section-header" style="border-color: rgba(255,255,255,0.1);">
+      <span class="section-num" style="color: var(--gold);">08 / Seed Partner Program</span>
+      <div class="section-line" style="background: rgba(255,255,255,0.1);"></div>
+      <span class="section-meta" style="color: rgba(255,255,255,0.5);">Limited · Permanent</span>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-16 items-center">
+      <div class="lg:col-span-5 reveal">
+        <div class="mono-label mb-6" style="color: var(--gold);">— 仅限前 38 位 · 永久基础优惠</div>
+        <div class="relative">
+          <div class="font-serif font-light leading-none float-anim" style="font-size: clamp(200px, 26vw, 320px); color: var(--gold); letter-spacing: -0.06em;">38</div>
+          <div class="absolute top-4 -right-4 px-3 py-2 transform rotate-6" style="border: 1px solid var(--gold); color: var(--gold); background: rgba(20, 10, 40, 0.8); backdrop-filter: blur(8px);">
+            <div class="text-[9px] tracking-[0.2em] uppercase">仅剩</div>
+            <div class="font-display italic-light text-sm mt-0.5">少量名额</div>
+          </div>
+        </div>
+        <div class="mt-10 pt-8" style="border-top: 1px solid rgba(255,255,255,0.1);">
+          <div class="flex justify-between mb-3">
+            <span class="text-sm" style="color: rgba(255,255,255,0.6);">创始名额锁定进度</span>
+            <span class="font-display-thin text-lg" style="color: var(--gold);">29 / 38</span>
+          </div>
+          <div class="spots-bar">
+            <div class="spots-fill" id="spotsFill" style="width: 0%;"></div>
+          </div>
+          <div class="mt-4 text-xs flex items-center gap-2" style="color: rgba(255,255,255,0.4);">
+            <span class="w-1.5 h-1.5 rounded-full" style="background: var(--gold);"></span> 实时更新 · 额满即止
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 reveal">
+        <h2 class="font-display-tight text-4xl lg:text-5xl leading-[1.05] mb-8 text-white">
+          一次性投入，<br>
+          <span class="italic-thin" style="color: var(--gold);">终身受益的创始伙伴计划。</span>
+        </h2>
+        <p class="text-base lg:text-lg leading-relaxed mb-12" style="color: rgba(255,255,255,0.6);">
+          立即开通全部工具，永久享受基础优惠。即刻起开放申请，额满即止。
+        </p>
+
+        <div class="space-y-3">
+          <div class="flex items-center gap-6 py-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+            <span class="font-serif italic-thin text-xl" style="color: var(--gold); opacity: 0.6; width: 24px;">01</span>
+            <div class="flex-1">
+              <div class="font-display text-base text-white">¥0 入驻费</div>
+              <div class="text-xs mt-0.5" style="color: rgba(255,255,255,0.5);">立即开通全部工具，永久免费入驻</div>
+            </div>
+            <span style="color: var(--gold);">✓</span>
+          </div>
+          <div class="flex items-center gap-6 py-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+            <span class="font-serif italic-thin text-xl" style="color: var(--gold); opacity: 0.6; width: 24px;">02</span>
+            <div class="flex-1">
+              <div class="font-display text-base text-white">5% 基础佣金</div>
+              <div class="text-xs mt-0.5" style="color: rgba(255,255,255,0.5);">永久享受（前五个月仅1%佣金）</div>
+            </div>
+            <span style="color: var(--gold);">✓</span>
+          </div>
+          <div class="flex items-center gap-6 py-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+            <span class="font-serif italic-thin text-xl" style="color: var(--gold); opacity: 0.6; width: 24px;">03</span>
+            <div class="flex-1">
+              <div class="font-display text-base text-white">创始标识</div>
+              <div class="text-xs mt-0.5" style="color: rgba(255,255,255,0.5);">专属"创始组织方"徽章</div>
+            </div>
+            <span style="color: var(--gold);">✓</span>
+          </div>
+          <div class="flex items-center gap-6 py-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+            <span class="font-serif italic-thin text-xl" style="color: var(--gold); opacity: 0.6; width: 24px;">04</span>
+            <div class="flex-1">
+              <div class="font-display text-base text-white">流量倾斜</div>
+              <div class="text-xs mt-0.5" style="color: rgba(255,255,255,0.5);">优先推荐位与曝光</div>
+            </div>
+            <span style="color: var(--gold);">✓</span>
+          </div>
+          <div class="flex items-center gap-6 py-4" style="border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <span class="font-serif italic-thin text-xl" style="color: var(--gold); opacity: 0.6; width: 24px;">05</span>
+            <div class="flex-1">
+              <div class="font-display text-base text-white">品牌联名</div>
+              <div class="text-xs mt-0.5" style="color: rgba(255,255,255,0.5);">优先参与平台共创活动</div>
+            </div>
+            <span style="color: var(--gold);">✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPLY ============ -->
+<section id="apply">
+  <div class="max-w-[1000px] mx-auto">
+    <div class="reveal text-center mb-16">
+      <div class="mono-label mb-6" style="color: var(--gold-deep);">— 联创 38 限时招募中 —</div>
+      <h2 class="font-display-tight leading-[0.98] mb-8" style="font-size: clamp(36px, 5vw, 64px);">
+        仅有 <span class="italic-thin" style="color: var(--gold-deep);">38</span> 个名额，<br>
+        <span class="italic-thin">立即申请，</span><br>
+        锁定永久创始权益。
+      </h2>
+      <p class="text-base lg:text-lg max-w-xl mx-auto leading-relaxed" style="color: var(--muted-deep);">
+        如果你相信，女性的力量需要一个更安全、更专注的场域来生长——欢迎加入我们，与Shero共同定义这个生态的规则。
+      </p>
+    </div>
+
+    <div class="reveal mt-20 grid sm:grid-cols-3 gap-6">
+      <div class="text-center pt-8" style="border-top: 1px solid var(--line-strong);">
+        <div class="font-display-thin text-4xl mb-2" style="color: var(--gold-deep); letter-spacing: -0.03em;">48h</div>
+        <div class="mono-label" style="color: var(--muted);">申请响应时间</div>
+      </div>
+      <div class="text-center pt-8" style="border-top: 1px solid var(--line-strong);">
+        <div class="font-display-thin text-4xl mb-2" style="color: var(--gold-deep); letter-spacing: -0.03em;">38</div>
+        <div class="mono-label" style="color: var(--muted);">个永久创始名额</div>
+      </div>
+      <div class="text-center pt-8" style="border-top: 1px solid var(--line-strong);">
+        <div class="font-display-thin text-4xl mb-2 italic-light" style="color: var(--gold-deep); letter-spacing: -0.03em;">永久</div>
+        <div class="mono-label" style="color: var(--muted);">创始权益有效期</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="dark-section text-dark py-20 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto relative z-10">
+    <div class="grid md:grid-cols-12 gap-12 mb-12">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold); color: var(--gold);">
+            <span class="font-serif italic-light text-lg">S</span>
+          </div>
+          <div>
+            <div class="font-display text-xl">Shero</div>
+            <div class="text-[9px] tracking-[0.24em] uppercase mt-1" style="color: rgba(255,255,255,0.4);">Partner Program · 联创 38</div>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed max-w-md" style="color: rgba(255,255,255,0.55);">
+          告别公域内卷与恶意限流，共建全国性女性活动聚集地。一个专注女性议题的安全场域——这里没有直接的性社交，只有关于成长与共鸣的纯粹连接。
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <div class="mono-label mb-5" style="color: rgba(255,255,255,0.35);">导航</div>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#letter" style="color: rgba(255,255,255,0.7);">缘起</a></li>
+          <li><a href="#about" style="color: rgba(255,255,255,0.7);">关于平台</a></li>
+          <li><a href="#why" style="color: rgba(255,255,255,0.7);">核心优势</a></li>
+          <li><a href="#benefits" style="color: rgba(255,255,255,0.7);">入驻权益</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <div class="mono-label mb-5" style="color: rgba(255,255,255,0.35);">合作</div>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#cooperation" style="color: rgba(255,255,255,0.7);">活动共创</a></li>
+          <li><a href="#cooperation" style="color: rgba(255,255,255,0.7);">品牌植入</a></li>
+          <li><a href="#cooperation" style="color: rgba(255,255,255,0.7);">深度整合</a></li>
+          <li><a href="#apply" style="color: rgba(255,255,255,0.7);">申请入驻</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono-label mb-5" style="color: rgba(255,255,255,0.35);">联系</div>
+        <ul class="space-y-3 text-sm" style="color: rgba(255,255,255,0.7);">
+          <li class="flex items-center gap-3"><i data-lucide="message-circle" class="w-4 h-4" style="color: var(--gold);"></i> 联系方式:微信号Echo_LULUX(19807271204)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4" style="border-top: 1px solid rgba(255,255,255,0.08);">
+      <div class="text-xs" style="color: rgba(255,255,255,0.35);">
+        © 2026 Shero. 一个专注女性议题的安全聚集地。
+      </div>
+      <button onclick="sharePage()" class="text-xs flex items-center gap-2" style="color: rgba(255,255,255,0.5);">
+        <i data-lucide="share-2" class="w-3 h-3"></i> 分享给朋友
+      </button>
+    </div>
+  </div>
+</footer>
+
+<div class="share-tooltip" id="shareTooltip">链接已复制，快去分享给朋友吧！</div>
+
+<script>
+lucide.createIcons();
+
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+
+const spotsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const fill = document.getElementById('spotsFill');
+      setTimeout(() => { fill.style.width = '76%'; }, 300);
+      spotsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+const spotsEl = document.getElementById('spotsFill');
+if (spotsEl) spotsObserver.observe(spotsEl);
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+const menuBtn = document.getElementById('menuBtn');
+const closeMenu = document.getElementById('closeMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+if (closeMenu) closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+});
+
+function sharePage() {
+  const url = window.location.href;
+  const title = document.title;
+  const text = 'Shero 组织方入驻计划：让女性力量在更安全的场域自由生长。';
+  
+  if (navigator.share) {
+    navigator.share({
+      title: title,
+      text: text,
+      url: url
+    }).catch(err => console.log('Error sharing:', err));
+  } else {
+    navigator.clipboard.writeText(url).then(() => {
+      const tooltip = document.getElementById('shareTooltip');
+      tooltip.classList.add('show');
+      setTimeout(() => {
+        tooltip.classList.remove('show');
+      }, 2500);
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+      alert('请手动复制链接：' + url);
+    });
+  }
+}
+
+
+</script>
+
+</body>
+</html>

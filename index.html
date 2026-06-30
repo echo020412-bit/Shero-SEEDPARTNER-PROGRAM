@@ -83,6 +83,9 @@ main, header, footer { position: relative; z-index: 2; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-stagger > * { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
 .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+section:target .reveal,
+section:target .reveal-stagger,
+section:target .reveal-stagger > * { opacity: 1; transform: translateY(0); }
 .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
 .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.15s; }
 .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.25s; }
@@ -134,7 +137,8 @@ section { padding: 100px 24px; }
 .nav-link.active { color: var(--fg); }
 
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.marquee-track { display: flex; animation: marquee 40s linear infinite; width: fit-content; gap: 48px; align-items: center; }
+.marquee-track { display: flex; animation: marquee 40s linear infinite; width: fit-content; gap: 48px; align-items: center; white-space: nowrap; }
+.marquee-track span { flex: 0 0 auto; }
 
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 .float-anim { animation: float 6s ease-in-out infinite; }
@@ -300,30 +304,30 @@ section { padding: 100px 24px; }
 
     <div class="mt-24 py-6 overflow-hidden" style="border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong);">
       <div class="marquee-track">
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">身心疗愈</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">运动户外</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">自我成长</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">职场成长</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">艺术与生活</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">文化沙龙</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">社交与链接</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">城市体验</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">正念冥想</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">消费探店</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">姐妹夜话</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">亲子家庭</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
         <!-- duplicate -->
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">身心疗愈</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">运动户外</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">自我成长</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">职场成长</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">艺术与生活</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">文化沙龙</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">社交与链接</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">城市体验</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">正念冥想</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">消费探店</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
-        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">姐妹夜话</span>
+        <span class="font-serif italic-light text-xl lg:text-2xl" style="color: var(--muted);">亲子家庭</span>
         <span class="text-lg" style="color: var(--gold);">✦</span>
       </div>
     </div>
@@ -647,7 +651,7 @@ section { padding: 100px 24px; }
     <div class="reveal mb-16 max-w-3xl">
       <div class="eyebrow">User Profile Based</div>
       <h2 class="font-display-tight text-4xl lg:text-5xl leading-[1.05]">
-        基于用户画像，<span class="italic-thin" style="color: var(--gold-deep);">推荐四个高转化方向。</span>
+        基于用户画像，<span class="italic-thin" style="color: var(--gold-deep);">推荐多元高转化方向。</span>
       </h2>
     </div>
 
@@ -655,15 +659,16 @@ section { padding: 100px 24px; }
       <div class="card p-8 flex flex-col">
         <div class="flex items-start justify-between mb-8">
           <div class="w-12 h-12 rounded-full flex items-center justify-center" style="border: 1px solid var(--gold-deep); color: var(--gold-deep);">
-            <i data-lucide="flower-2" class="w-6 h-6"></i>
+            <i data-lucide="mountain-snow" class="w-6 h-6"></i>
           </div>
           <span class="font-serif italic-thin text-5xl" style="color: var(--gold); opacity: 0.4;">01</span>
         </div>
-        <h3 class="font-display-tight text-xl mb-3">身心疗愈</h3>
-        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">针对焦虑、内耗的年轻女性，提供放松与能量恢复。</p>
+        <h3 class="font-display-tight text-xl mb-3">运动与户外</h3>
+        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">从轻运动到城市探索，满足用户对健康、活力和真实陪伴的需求。</p>
         <div class="flex flex-wrap gap-1.5 pt-4" style="border-top: 1px solid var(--line);">
-          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">正念冥想</span>
-          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">颂钵疗愈</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">周末徒步</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">瑜伽普拉提</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">飞盘骑行</span>
         </div>
       </div>
 
@@ -674,11 +679,12 @@ section { padding: 100px 24px; }
           </div>
           <span class="font-serif italic-thin text-5xl" style="color: var(--gold); opacity: 0.4;">02</span>
         </div>
-        <h3 class="font-display-tight text-xl mb-3">自我成长</h3>
-        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">聚焦职业发展与认知升级，满足用户的提升欲。</p>
+        <h3 class="font-display-tight text-xl mb-3">职场与知识</h3>
+        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">聚焦职业发展、技能学习与认知升级，满足用户的提升欲。</p>
         <div class="flex flex-wrap gap-1.5 pt-4" style="border-top: 1px solid var(--line);">
-          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">职场解惑</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">职业规划</span>
           <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">读书会</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">AI工作坊</span>
         </div>
       </div>
 
@@ -689,11 +695,12 @@ section { padding: 100px 24px; }
           </div>
           <span class="font-serif italic-thin text-5xl" style="color: var(--gold); opacity: 0.4;">03</span>
         </div>
-        <h3 class="font-display-tight text-xl mb-3">艺术与生活</h3>
-        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">通过艺术创作释放压力，培养生活美学。</p>
+        <h3 class="font-display-tight text-xl mb-3">文化与美学</h3>
+        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">用展览、影像、手作与审美体验，连接女性的表达和生活品味。</p>
         <div class="flex flex-wrap gap-1.5 pt-4" style="border-top: 1px solid var(--line);">
-          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">手作工坊</span>
-          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">花艺茶道</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">观展导览</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">电影沙龙</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">手作市集</span>
         </div>
       </div>
 
@@ -704,11 +711,12 @@ section { padding: 100px 24px; }
           </div>
           <span class="font-serif italic-thin text-5xl" style="color: var(--gold); opacity: 0.4;">04</span>
         </div>
-        <h3 class="font-display-tight text-xl mb-3">社交与链接</h3>
-        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">解决孤独感，建立高质量的女性互助同温层。</p>
+        <h3 class="font-display-tight text-xl mb-3">生活方式社群</h3>
+        <p class="text-sm mb-6 flex-1" style="color: var(--muted-deep);">覆盖消费体验、亲子家庭和同城兴趣，建立更自然的长期关系。</p>
         <div class="flex flex-wrap gap-1.5 pt-4" style="border-top: 1px solid var(--line);">
-          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">姐妹夜话</span>
-          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">周末徒步</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">咖啡探店</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">亲子营地</span>
+          <span class="px-2.5 py-1 text-[10px] rounded-full" style="background: var(--bg); border: 1px solid var(--line);">新友晚餐</span>
         </div>
       </div>
     </div>
@@ -1038,6 +1046,18 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+
+function revealVisibleElements() {
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.95 && rect.bottom > 0) {
+      el.classList.add('visible');
+    }
+  });
+}
+requestAnimationFrame(revealVisibleElements);
+window.addEventListener('hashchange', () => requestAnimationFrame(revealVisibleElements));
+window.addEventListener('load', () => setTimeout(revealVisibleElements, 120));
 
 const spotsObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
